@@ -1,16 +1,26 @@
 import './App.css';
-import Auth from './Auth'; // Importing your new component
+import Auth from './Auth'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>PetFit 🐶</h1>
-        <p>Track your pet's health and calories</p>
+      <div className="tamagotchi-shell">
         
-        {/* This line is what actually renders the login box! */}
-        <Auth />
-      </header>
+        <div className="tamagotchi-screen">
+          <h1>PetFit 🐱</h1>
+          <p className="subtitle">Track your pet's health</p>
+          
+          {/* Your login box renders inside the screen */}
+          <Auth />
+        </div>
+
+        <div className="tamagotchi-buttons">
+          <div className="button"></div>
+          <div className="button"></div>
+          <div className="button"></div>
+        </div>
+
+      </div>
     </div>
   );
 }
