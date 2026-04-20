@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Centers everything on the page and gives a pixelated font vibe */
+body {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+/* The outer egg shape */
+.tamagotchi-shell {
+  background-color: #ff6b6b; /* Change this hex code for a different shell color! */
+  width: 350px;
+  height: 450px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Creates the egg curve */
+  box-shadow: inset -10px -10px 20px rgba(0,0,0,0.2), 10px 10px 20px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  border: 4px solid #cc5555;
 }
 
-.App-link {
-  color: #61dafb;
+/* The retro digital screen */
+.tamagotchi-screen {
+  background-color: #9ea78b; /* Classic LCD green */
+  width: 220px;
+  height: 250px;
+  border: 5px solid #4a4a4a;
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  color: #2b331f; /* Dark LCD text color */
+  overflow-y: auto; /* Adds a scrollbar if the login form gets too big */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tamagotchi-screen h1 {
+  font-size: 1.5rem;
+  margin: 0 0 5px 0;
+}
+
+.tamagotchi-screen .subtitle {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-weight: bold;
+}
+
+/* The 3 physical buttons at the bottom */
+.tamagotchi-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-top: 30px;
+}
+
+.button {
+  width: 30px;
+  height: 30px;
+  background-color: #f7ca18; 
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3), inset -2px -2px 5px rgba(0,0,0,0.2);
+  border: 2px solid #c9a212;
+}
+
+/* --- OVERRIDES FOR THE AUTH COMPONENT --- */
+/* This forces the Auth form to blend into the green screen instead of the dark mode we set earlier */
+.tamagotchi-screen > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  color: #2b331f !important;
+  width: 100%;
+}
+
+.tamagotchi-screen input {
+  border: 2px solid #2b331f !important;
+  background-color: #9ea78b !important;
+  color: #2b331f !important;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.tamagotchi-screen input::placeholder {
+  color: #586345;
+}
+
+.tamagotchi-screen button[type="submit"] {
+  background-color: #2b331f !important;
+  color: #9ea78b !important;
+  border: 2px solid #2b331f !important;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 0 !important; /* Makes it blocky and retro */
+  text-transform: uppercase;
+}
+
+.tamagotchi-screen button {
+  color: #2b331f !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
 }
