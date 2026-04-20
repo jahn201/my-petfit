@@ -1,5 +1,6 @@
 import './App.css';
 import Auth from './Auth'; 
+import CalorieTracker from "./components/CalorieTracker";
 
 function App() {
   return (
@@ -10,10 +11,12 @@ function App() {
           <h1>PetFit 🐱</h1>
           <p className="subtitle">Track your pet's health</p>
           
-          {/* Your login box renders inside the screen */}
           <Auth />
-        </div>
-
+          
+          <hr style={{ margin: '20px 0', borderColor: '#444' }} />
+          <CalorieTracker />
+        </div> 
+        
         <div className="tamagotchi-buttons">
           <div className="button"></div>
           <div className="button"></div>
